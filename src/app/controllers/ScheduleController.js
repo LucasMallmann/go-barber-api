@@ -1,7 +1,7 @@
-import Appointment from '../models/Appointment';
-import User from '../models/User';
 import { startOfDay, endOfDay, parseISO } from 'date-fns';
 import { Op } from 'sequelize';
+import Appointment from '../models/Appointment';
+import User from '../models/User';
 
 class ScheduleController {
   async index(req, res) {
@@ -13,7 +13,7 @@ class ScheduleController {
     });
 
     if (!checkUserProvider) {
-      return res.statu(400).json({ error: 'User is not a provider' });
+      return res.status(400).json({ error: 'User is not a provider' });
     }
 
     const { date } = req.query;
