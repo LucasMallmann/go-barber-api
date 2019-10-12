@@ -7,6 +7,6 @@ export default {
   },
   secure: false,
   default: {
-    from: 'Equipe GoBarber <noreply@gobarber.com>',
+    from: 'Equipe Meetapp <noreply@meetapp.com>',
   },
 };

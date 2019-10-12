@@ -1,6 +1,7 @@
 import Router from 'express';
-
 import multer from 'multer';
+
+/** Controllers */
 import UserController from './app/controllers/UserController';
 import SessionController from './app/controllers/SessionController';
 import FileController from './app/controllers/FileController';
