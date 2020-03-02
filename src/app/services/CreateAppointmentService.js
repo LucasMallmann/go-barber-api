@@ -3,6 +3,7 @@ import { pt } from 'date-fns/locale';
 import User from '../models/User';
 import Appointment from '../models/Appointment';
 import Notification from '../schemas/Notification';
+import Cache from '../../lib/Cache';
 
 class CreateAppointmentService {
   async run({ provider_id, user_id, date }) {
@@ -69,6 +70,11 @@ class CreateAppointmentService {
       provider_id,
       date,
     });
+
+    /**
+     * Invalidate Cache
+     */
+    await Cache.invalidatePrefix(`user:${user_id}:appointments`);
 
     return appointment;
   }
